@@ -22,10 +22,4 @@ class NotificationViewModel (
             dao.markAllAsRead()
         }
     }
-
-    fun clearAll() {
-        viewModelScope.launch {
-            dao.clearAll()
-        }
-    }
 }
