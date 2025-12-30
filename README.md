@@ -50,6 +50,15 @@ LazyColumn is used instead of RecyclerView for list rendering, which serves the 
 
 ---
 
+## APK
+
+A debug APK is included for quick testing.
+
+Path:app/app-debug.apk
+
+---
+
+
 ##  How to Run
 
 1. Clone the repository
