@@ -111,7 +111,7 @@ fun EmptyNotificationsState() {
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = "No notifications",
+            text = "You have no notifications",
             style = MaterialTheme.typography.bodyMedium
         )
     }

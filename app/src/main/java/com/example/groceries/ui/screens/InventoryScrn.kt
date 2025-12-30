@@ -81,7 +81,7 @@ fun InventoryScrn() {
         .value ?: emptyMap()
 
 
-    var showAddDialog by remember { mutableStateOf(false)  }
+    var showDialog by remember { mutableStateOf(false)  }
     var selectedCategory by remember { mutableStateOf("All") }
     var itemToEdit by remember { mutableStateOf<GroceryItem?>(null) }
 
@@ -92,10 +92,10 @@ fun InventoryScrn() {
     }.sortedBy { it.expiry }
 
     //condition for showing add/edit dialog
-    if (showAddDialog || itemToEdit != null) {
+    if (showDialog || itemToEdit != null) {
         AddItemDialog(
             onDismiss = {
-                showAddDialog = false
+                showDialog = false
                 itemToEdit = null
             },
             memoryMap = memoryMap,
@@ -106,7 +106,7 @@ fun InventoryScrn() {
                 } else {
                     viewModel.updateItem(item)
                 }
-                showAddDialog = false
+                showDialog = false
                 itemToEdit = null
             }
         )
@@ -115,7 +115,7 @@ fun InventoryScrn() {
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { showAddDialog = true }
+                onClick = { showDialog = true }
             ) {
                 Icon(
                     imageVector = Icons.Filled.Add,
@@ -252,6 +252,7 @@ fun InventoryList(
             key = { it.id }
         ) { item ->
 
+            //the swipe to dismiss feature
             val dismissState = rememberSwipeToDismissBoxState(
                 confirmValueChange = { value ->
                     if (value == SwipeToDismissBoxValue.EndToStart) {
