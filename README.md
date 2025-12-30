@@ -26,7 +26,7 @@ A simple grocery inventory and notification app built as part of a technical tas
 
 ---
 
-## Project Structure (High Level)
+## Project Structure
 
 * `ui/screens/` – Screens, dialogs, and UI-related logic
 * `ui/navigation/` – Bottom navigation and navigation setup
